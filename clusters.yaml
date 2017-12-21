@@ -1,0 +1,7 @@
+- alias: hasura
+  config:
+    configmap: controller-conf
+    namespace: accursedness72-hasura
+  data: null
+  kubeContext: accursedness72
+  name: accursedness72

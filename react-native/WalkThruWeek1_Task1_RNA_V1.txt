@@ -1,0 +1,117 @@
+Windows Instruction for getting "react-native App" to work and debug on Android device.
+This app uses STACK, TAB and DRAWER navigation.
+---------------------------------------------------------------------------------------
+0.) npm -i -g react-native-cli -> one time only
+
+Note: Developing "react-native app" on android device consist of following three steps.
+1.) react-native init Week1_Task1_RNA_V1
+2.) cd Week1_Task1_RNA_V1
+    2a.) npm install --save react-navigation
+    2b.) npm install --save react-native-vector-icons  <- run this from admin command prompt. 
+    2c.) react-native link        <- do this after installing all npm packages.         
+3.) react-native run-android
+         
+         
+3.) react-native run-android
+4.) but don't do them yet. Please follow along for the first time developer.
+
+If there are any error in this document please email those issue's to Rajnishc8@gmail.com. Thanks.
+
+Prequsite:
+A.) Install VS Code. This will be used as editor, plus maybe for debugging too.
+https://code.visualstudio.com/download
+
+B.) Install react-native extension in VS Code:
+Press Ctrl + Shift + X (Cmd + Shift + X on macOS), wait a moment while the list of available extensions is populated
+Type react-native and install React Native Tools
+For more guidance view VS Code Extension Gallery
+If you haven't already, install React Native:
+
+C.) You will need Node, the React Native command line interface, Python2, a JDK, and Android Studio.
+Open an Administrator Command Prompt (right click Command Prompt and select "Run as Administrator"), 
+then run the following command:
+choco install -y nodejs.install python2 jdk8
+
+Start:
+0.) Prep step
+npm install -g react-native-cli -> only one time on each system
+npm install -g yarn             -> only one time on each system     
+
+I.)
+react-native init navAppRNA
+cd navAppRNA
+
+To run your app on iOS:
+   react-native run-ios
+   - or -
+   Open iosnavAppRNA.xcodeproj in Xcode
+   Hit the Run button
+
+To run your app on Android:
+===================Start: One time prep for Android=======================================================================
+0.) Do following things for Android, one time only. Assumption Android studio is installed earlier in prerequsite step "C".
+Run following command to accept licenses, type 'y' as and when prompted.
+C:\Users\TEST\AppData\Local\Android\sdk\tools\bin\sdkmanager --licenses
+1.) create "local.properties" file and add following line in it.
+sdk.dir=C:\Users\TEST\AppData\Local\Android\sdk
+2.) set environment variable ANDROID_HOME to C:\Users\TEST\AppData\Local\Android\sdk
+3.) append "C:\Program Files (x86)\Android\android-sdk\platform-tools" to PATH so that build tools can find adb.exe
+
+Note: TEST in above line is current username. So replace "TEST" with "YourUserName" 
+==================End: One time prep for Android==========================================================================
+
+Finally! Have an Android emulator running (quickest way to get started), or a device connected
+   react-native run-android
+
+If you get following error after running "react-native run-android" command :
+>Execution failed for task ':app:compileDebugJavaWithJavac'.
+> Could not find tools.jar. Please check that C:\Program Files\Java\jre1.8.0_151 contains a valid JDK installation
+Then install JDK from -> http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+
+II.)
+To debug in vs code:
+Open your React Native application in VS Code.
+open another terminal (or command prompt) and navigate to the ImadAppRNA folder and type code .:
+cd navAppRNA
+code .
+
+Set a breakpoint in App.js at render() function.
+To set a breakpoint in App.js, click on the gutter to the left of the line numbers.
+This will set a breakpoint which will be visible as a red circle.
+
+III.)
+Debugging React Native applications
+We need to initially configure the debugger.
+To do so, go to the Debug view (Ctrl+Shift+D) and click on gear button to create a launch.json debugger configuration file.
+
+Choose "React Native debugger" from the Select Environment dropdown. 
+This will create a launch.json file in a new .vscode folder in your project some default configuration settings.
+You can safely close this file.
+
+choose the appropriate configuration in the Configuration dropdown,
+i.e  for Android -> "Debug Android"
+     for ios     -> "Debug iOS"
+     for  Expo   -> "Debug in Exponent"
+and then press F5 (or click Green Arrow Configure-gear button) to start debugging your app in VS Code.
+We will choose "Debug Android" and press F5.
+This will start loading you app on device . Once app is Installed, Shake you Device. This will show developer menu.
+Reload app and we will break in our code to stepwise debugging.
+press F5 again to continue.
+*****You can stop here now. Rest is just Info for more knowledge.****
+
+
+IV.)
+React Native launch targets
+You can debug your app on an Android emulator, Android device or iOS simulator or Expo. 
+"react-native extension for vs code"  extension provides experimental support for iOS devices.
+
+V.)
+Using React Native commands in the Command Palette
+In the Command Palette, type React Native and choose a command.
+
+VI.)
+React Native commands
+The Run Android command triggers react-native run-android and starts your app for Android.
+The Run iOS command similarly triggers react-native run-ios and starts your app in the iOS simulator (iPhone 6).
+The Packager commands allow you to start/stop the Metro Bundler (formerly React Packager).

@@ -1,0 +1,43 @@
+HowTo on windows 10.
+====================
+
+1. Download Hasura CLI here: https://docs.hasura.io/0.15/manual/install-hasura-cli.html 
+2. Install hasura.msi
+3. Open cmd.exe as administrator
+4. cd to your working folder. In my case it is c:\proj.  
+    • cd \proj
+
+5. C:\Users\TEST\AppData\Local\Hasura\hasura login
+   OR
+5. hasura login 
+   5a. Follow the webpage instruction and login or signup for hasura. Either login thru "google" or "github" account
+6. Add "C:\Users\TEST\AppData\Local\Hasura\hasura"  to PATH. 
+
+7. hasura quickstart hello-react-native --type=hpdf
+   output of  "hasura quickstart hello-react-native --type=hpdf":
+     • Project cloned directory=C:\Pdf_Docs\NPTEL\hasura\InternShip\hello-react-native
+     • Cluster created and added to project cluster-alias=hasura cluster-name=accursedness72
+     • SSH key added to cluster key-file=C:\Users\TEST\.ssh\id_rsa.pub
+     ✓ You can now deploy the project:
+
+
+     $ cd hello-react-native
+     $ git add . && git commit -m "First commit"
+     $ git push hasura master
+
+8. cd hello-react-native
+9. Install node modules in "react-native" folder. 
+   • cd react-native 
+   • npm install
+
+10. hasura cluster status
+11. Opening the app at this point before pushing to hasura. Just to see how does default app looks like.
+    •  Open Expo XDE, do a login/signup and click on Open existing project.... Browse to the hello-react-native directory and open the react-native folder.
+    •  Once the project loads, click on Share.
+    •  Scan the QR code using the Expo app from your phone (Install from Playstore/Appstore)
+    •  Fully working app will open on your phone   
+
+12. Now let us copy our App to this hasura Project. This is Migrating an existing project
+    • Replace react-native directory with your pre-existing react-native project directory.
+    • run npm install from this new directory
+    • App is ready
