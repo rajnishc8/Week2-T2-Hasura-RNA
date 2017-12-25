@@ -1,3 +1,6 @@
+﻿
+
+
 HowTo on windows 10.
 ====================
 
@@ -25,6 +28,9 @@ HowTo on windows 10.
      $ git add . && git commit -m "First commit"
      $ git push hasura master
 
+7a.  App will be running at  https://app.accursedness72.hasura-app.io
+       There is some ui at ->    https://ui.accursedness72.hasura-app.io when deployed later.
+
 8. cd hello-react-native
 9. Install node modules in "react-native" folder. 
    • cd react-native 
@@ -38,6 +44,271 @@ HowTo on windows 10.
     •  Fully working app will open on your phone   
 
 12. Now let us copy our App to this hasura Project. This is Migrating an existing project
-    • Replace react-native directory with your pre-existing react-native project directory.
-    • run npm install from this new directory
+13.  Replace react-native directory with your pre-existing react-native project directory.
+     copy C:\Proj\Week1_Task1_RNA_V1 to • run npm install from this new directory
     • App is ready
+
+
+14. cd  hello-react-native
+15. git add .
+16. git commit -m "Initial Check-in to Hasura"
+17.git push hasura master
+   Output of "git push hasura master" :
+     The authenticity of host '[accursedness72.hasura-app.io]:2057 ([35.200.219.52]:2057)' can't be established.
+     ECDSA key fingerprint is SHA256:/Aa9vlU+9qS8lQMn5GMmmD5IyYDDvj+XVEdfwfQfh48.
+     Are you sure you want to continue connecting (yes/no)? yes
+     Warning: Permanently added '[accursedness72.hasura-app.io]:2057,[35.200.219.52]:2057' (ECDSA) to the list of known hosts.
+     • Pushing to cluster hasura [accursedness72]...
+     ✓ Migrations applied
+       Waiting for configuration to be synced...  ▇ Connection to accursedness✓ Configuration applied
+       Waiting for configuration to be synced...  ▅   Creating microservice api on cluster hasura [accursedness72]...  █ ✓ Created cluster=hasura [accursedness72] microservice=api
+     Counting objects: 154, done.
+     Delta compression using up to 4 threads.
+     Compressing objects: 100% (136/136), done.
+     Writing objects: 100% (154/154), 807.06 KiB | 4.86 MiB/s, done.
+     Total 154 (delta 13), reused 0 (delta 0)
+     remote: Resolving deltas: 100% (13/13), done.
+     remote: Hasura build system : Thu Dec 21 12:47:28 UTC 2017: Initialising
+     remote:
+     remote: Creating the build directory
+     remote: Checking out 'master:f6e2cb0fd5f2d9d2470295cddeb93a6f106d7897' to '/home/hasura/build/accursedness72'
+     remote:
+     remote: 1 deployment(s) found in this repo
+     remote: Trying to build them...
+     remote:
+     remote: Building Docker image for : api
+     remote:
+     remote: Building Docker image : registry.harbor.hasura-app.io/accursedness72/accursedness72-accursedness72-user.api-api:f6e2cb0fd5f2d9d2470295cddeb93a6f106d7897
+     remote: Sending build context to Docker daemon 10.24 kB
+     remote: Step 1 : FROM mhart/alpine-node:7.6.0
+     remote:  ---> 81f915e9759a
+     remote: Step 2 : WORKDIR /src
+     remote:  ---> Using cache
+     remote:  ---> c4fdeada922f
+     remote: Step 3 : ADD src /src
+     remote:  ---> b143aa8b8145
+     remote: Removing intermediate container 56d03ed6d583
+     remote: Step 4 : RUN npm install
+     remote:  ---> Running in cc309f3945ac
+     remote: hello-node-js@1.0.0 /src
+     remote: +-- body-parser@1.18.2
+     remote: | +-- bytes@3.0.0
+     remote: | +-- content-type@1.0.4
+     remote: | +-- debug@2.6.9
+     remote: | | `-- ms@2.0.0
+     remote: | +-- depd@1.1.1
+     remote: | +-- http-errors@1.6.2
+     remote: | | +-- inherits@2.0.3
+     remote: | | +-- setprototypeof@1.0.3
+     remote: | | `-- statuses@1.4.0
+     remote: | +-- iconv-lite@0.4.19
+     remote: | +-- on-finished@2.3.0
+     remote: | | `-- ee-first@1.1.1
+     remote: | +-- qs@6.5.1
+remote: | +-- raw-body@2.3.2
+remote: | | `-- unpipe@1.0.0
+remote: | `-- type-is@1.6.15
+remote: |   `-- media-typer@0.3.0
+remote: +-- express@4.16.2
+remote: | +-- accepts@1.3.4
+remote: | | `-- negotiator@0.6.1
+remote: | +-- array-flatten@1.1.1
+remote: | +-- content-disposition@0.5.2
+remote: | +-- cookie@0.3.1
+remote: | +-- cookie-signature@1.0.6
+remote: | +-- encodeurl@1.0.1
+remote: | +-- escape-html@1.0.3
+remote: | +-- etag@1.8.1
+remote: | +-- finalhandler@1.1.0
+remote: | | `-- statuses@1.3.1
+remote: | +-- fresh@0.5.2
+remote: | +-- merge-descriptors@1.0.1
+remote: | +-- methods@1.1.2
+remote: | +-- parseurl@1.3.2
+remote: | +-- path-to-regexp@0.1.7
+remote: | +-- proxy-addr@2.0.2
+remote: | | +-- forwarded@0.1.2
+remote: | | `-- ipaddr.js@1.5.2
+remote: | +-- range-parser@1.2.0
+remote: | +-- safe-buffer@5.1.1
+remote: | +-- send@0.16.1
+remote: | | +-- destroy@1.0.4
+remote: | | +-- mime@1.4.1
+remote: | | `-- statuses@1.3.1
+remote: | +-- serve-static@1.13.1
+remote: | +-- setprototypeof@1.1.0
+remote: | +-- statuses@1.3.1
+remote: | +-- utils-merge@1.0.1
+remote: | `-- vary@1.1.2
+remote: +-- morgan@1.9.0
+remote: | +-- basic-auth@2.0.0
+remote: | `-- on-headers@1.0.1
+remote: +-- request@2.83.0
+remote: | +-- aws-sign2@0.7.0
+remote: | +-- aws4@1.6.0
+remote: | +-- caseless@0.12.0
+remote: | +-- combined-stream@1.0.5
+remote: | | `-- delayed-stream@1.0.0
+remote: | +-- extend@3.0.1
+remote: | +-- forever-agent@0.6.1
+remote: | +-- form-data@2.3.1
+remote: | | `-- asynckit@0.4.0
+remote: | +-- har-validator@5.0.3
+remote: | | +-- ajv@5.5.2
+remote: | | | +-- co@4.6.0
+remote: | | | +-- fast-deep-equal@1.0.0
+remote: | | | +-- fast-json-stable-stringify@2.0.0
+remote: | | | `-- json-schema-traverse@0.3.1
+remote: | | `-- har-schema@2.0.0
+remote: | +-- hawk@6.0.2
+remote: | | +-- boom@4.3.1
+remote: | | +-- cryptiles@3.1.2
+remote: | | | `-- boom@5.2.0
+remote: | | +-- hoek@4.2.0
+remote: | | `-- sntp@2.1.0
+remote: | +-- http-signature@1.2.0
+remote: | | +-- assert-plus@1.0.0
+remote: | | +-- jsprim@1.4.1
+remote: | | | +-- extsprintf@1.3.0
+remote: | | | +-- json-schema@0.2.3
+remote: | | | `-- verror@1.10.0
+remote: | | |   `-- core-util-is@1.0.2
+remote: | | `-- sshpk@1.13.1
+remote: | |   +-- asn1@0.2.3
+remote: | |   +-- bcrypt-pbkdf@1.0.1
+remote: | |   +-- dashdash@1.14.1
+remote: | |   +-- ecc-jsbn@0.1.1
+remote: | |   +-- getpass@0.1.7
+remote: | |   +-- jsbn@0.1.1
+remote: | |   `-- tweetnacl@0.14.5
+remote: | +-- is-typedarray@1.0.0
+remote: | +-- isstream@0.1.2
+remote: | +-- json-stringify-safe@5.0.1
+remote: | +-- mime-types@2.1.17
+remote: | | `-- mime-db@1.30.0
+remote: | +-- oauth-sign@0.8.2
+remote: | +-- performance-now@2.1.0
+remote: | +-- stringstream@0.0.5
+remote: | +-- tough-cookie@2.3.3
+remote: | | `-- punycode@1.4.1
+remote: | +-- tunnel-agent@0.6.0
+remote: | `-- uuid@3.1.0
+remote: `-- request-debug@0.2.0
+remote:   `-- stringify-clone@1.1.1
+remote:
+remote: npm WARN hello-node-js@1.0.0 No repository field.
+remote:  ---> 51f7b5d341bb
+remote: Removing intermediate container cc309f3945ac
+remote: Step 5 : CMD node server.js
+remote:  ---> Running in 49fcec7c6290
+remote:  ---> 228df65ebdd7
+remote: Removing intermediate container 49fcec7c6290
+remote: Successfully built 228df65ebdd7
+remote: pushing registry.harbor.hasura-app.io/accursedness72/accursedness72-accursedness72-user.api-api:f6e2cb0fd5f2d9d2470295cddeb93a6f106d7897 to registry
+remote: The push refers to a repository [registry.harbor.hasura-app.io/accursedness72/accursedness72-accursedness72-user.api-api]
+remote: 3e5f46e8fefc: Preparing
+remote: e089199c69dd: Preparing
+remote: 42e25a546d19: Preparing
+remote: 8fcb044b000b: Preparing
+remote: 60ab55d3379d: Preparing
+remote: e089199c69dd: Pushed
+remote: 42e25a546d19: Pushed
+remote: 3e5f46e8fefc: Pushed
+remote: 60ab55d3379d: Pushed
+remote: 8fcb044b000b: Pushed
+remote: f6e2cb0fd5f2d9d2470295cddeb93a6f106d7897: digest: sha256:8918fb7745eb08008b00b4caea71c2ddf0dc51b29953b6a9dc3ee2b6c41913e0 size: 1366
+remote:
+remote: Updating Kubernetes deployment: api
+remote: deployment "api" image updated
+remote: Waiting for rollout to finish: 0 of 1 updated replicas are available...
+remote: deployment "api" successfully rolled out
+remote: NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+remote: api       1         1         1            1           1m
+remote:
+remote: Removing build directory
+remote:
+remote: Hasura build system : Thu Dec 21 12:48:39 UTC 2017: Finished build
+remote:
+remote:
+remote: Next steps:
+remote:   $ hasura api-console         # Explore the instant Hasura APIs
+remote:   $ hasura microservices list  # Browse the microservices running on your cluster
+remote:
+remote:
+To ssh://accursedness72.hasura-app.io:2057/~/git/accursedness72
+ * [new branch]      master -> master
+   ssh://hasura@accursedness72.hasura-app.io:2057/~/git/accursedness72
+
+ssh ssh://accursedness72.hasura-app.io:2057/~/git/accursedness72 -i C:\Users\TEST\.ssh\
+ssh -p 2057 ssh.accursedness72.hasura-app.io -i /mnt/c/Users/TEST/.ssh
+
+zejgabe-tjupajc-umekxej-otzoji
+ssh-copy-id  ssh.accursedness72.hasura-app.io
+
+git log
+git status
+hasura ms list
+hasura secrets list
+hasura cluster status
+hasura ms ls -n user
+hasura ms logs <service-name>
+hasura ssh-key list
+
+
+Do `git remote -v`(while inside the git repo) and check the URLs. It should state the new cluster name
+
+
+C:\Pdf_Docs\NPTEL\hasura\InternShip\hello-react-native2>git remote -v
+hasura  ssh://hasura@accursedness72.hasura-app.io:2057/~/git/accursedness72 (fetch)
+hasura  ssh://hasura@accursedness72.hasura-app.io:2057/~/git/accursedness72 (push)
+
+
+C:\Pdf_Docs\NPTEL\hasura\InternShip\Week1-T1-RNA>git remote -v
+origin  https://github.com/rajnishc8/Week1-T1-RNA.git (fetch)
+origin  https://github.com/rajnishc8/Week1-T1-RNA.git (push)
+
+git remote add mygithubrepo https://github.com/jhealy/kinect2.git
+git push -f mygithubrepo master
+
+git remote set-url origin --push --add user1@repo1
+git remote set-url origin --push --add user2@repo2
+git remote -v
+
+git remote set-url origin --add user1@repo1
+git remote set-url origin --add user2@repo2
+git remote -v
+
+
+Note: hasura means origin in git terminology.
+
+git remote set-url hasura   --add https://github.com/rajnishc8/Week1-T1-RNA.git
+git remote -v
+git log
+git status
+git remote show hasura
+git add .
+git commit -m "Test Check-in to Hasura and git"
+git push hasura master
+git fetch --all
+
+
+
+
+
+=========================================================================================================
+Those of you who have NOT followed the instructions properly, especially those who have used the `quickstart` command WITHOUT `--type=hpdf`, your non-hpdf clusters are deleted, as warned in the previous email.
+
+If you face errors like `[1014] Cannot connect to cluster [name]. This could happen when there are issues with internet connectivity or if the cluster is deleted.` check if your cluster is still available using `hasura cluster list`. If it has been deleted, note that you DO NOT need to quickstart again and none of your work is lost. Just follow the steps below to create a new cluster and add it to your existing project:
+
+1. Open `clusters.yaml`, remove all the content, save the empty file.
+2. Create a new hpdf cluster: `hasura cluster create --type=hpdf` (don't forget the type flag, else you'll have to go through this again) - note the name
+3. Add cluster to the project: `hasura cluster add [name] -c hasura`
+4. The cluster should sbe et as default, but in any case, set it as default: `hasura cluster set-default hasura`
+5. Add your SSH key: `hasura ssh-key add`
+6. Commit new clusters.yaml: `git commit -am "add new cluster"`
+7. Push the project: `git push hasura master`
+8. Your new cluster has all your work now, including table schema (you'll have to insert data yourself)
+
+(If you are wondering who would have not followed instructions, 75 of us did not)
+
+============================================================================================================
