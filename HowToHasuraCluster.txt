@@ -281,7 +281,8 @@ git remote -v
 
 Note: hasura means origin in git terminology.
 
-git remote set-url hasura   --add https://github.com/rajnishc8/Week1-T1-RNA.git
+git remote add myGitHub https://github.com/rajnishc8/Week1-T1-RNA.git
+git remote set-url myGitHub   --add https://github.com/rajnishc8/Week1-T1-RNA.git
 git remote -v
 git log
 git status
@@ -289,7 +290,19 @@ git remote show hasura
 git add .
 git commit -m "Test Check-in to Hasura and git"
 git push hasura master
+git push -f hasura master  <-- is you friend to do things forcefully.
 git fetch --all
+
+You can push your code to two repo's at same time. Do the following. 
+
+1. git remote add myGitHub https://github.com/rajnishc8/Week1-T1-RNA.git
+2. git remote set-url --add myGitHub https://github.com/rajnishc8/Week1-T1-RNA.git
+3. git push hasura master
+Note: replace "https://github.com/rajnishc8/Week1-T1-RNA.git' by your 'repo url'
+
+git remote add origin https://github.com/rajnishc8/Week2-T2-Hasura-RNA.git
+git push -u origin master
+
 
 
 
@@ -312,3 +325,38 @@ If you face errors like `[1014] Cannot connect to cluster [name]. This could hap
 (If you are wondering who would have not followed instructions, 75 of us did not)
 
 ============================================================================================================
+
+
+1. cd  hello-react-native
+2. git add .
+3. git commit -m "Initial Check-in to Hasura"
+4. git push hasura master
+5. git pull
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+…or create a new repository on the command line (https)
+
+echo "# Week2-T2-Hasura-RNA" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/rajnishc8/Week2-T2-Hasura-RNA.git
+git push -u origin master
+…or push an existing repository from the command line
+
+git remote add origin https://github.com/rajnishc8/Week2-T2-Hasura-RNA.git
+git push -u origin master
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+…or create a new repository on the command line(ssh)
+
+echo "# Week2-T2-Hasura-RNA" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:rajnishc8/Week2-T2-Hasura-RNA.git
+git push -u origin master
+…or push an existing repository from the command line
+
+git remote add origin git@github.com:rajnishc8/Week2-T2-Hasura-RNA.git
+git push -u origin master
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
